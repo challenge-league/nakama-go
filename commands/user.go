@@ -314,6 +314,10 @@ func getCmdUserGet(cmdBuilder *commandsBuilder) *cobra.Command {
 		RunE: func(cmd *cobra.Command, args []string) error {
 			log.Infof("%+v\n", args)
 			user, _ := cmd.Flags().GetString("user")
+
+			if user == "" && len(args) > 0 {
+				user = args[0]
+			}
 			account, err := getAccount(cmdBuilder, user)
 			if err != nil {
 				log.Error(err)
