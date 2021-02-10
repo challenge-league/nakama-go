@@ -432,8 +432,8 @@ func getCmdTicketCreate(cmdBuilder *commandsBuilder) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "go ",
 		Aliases: cmdTicketAliases,
-		Short:   "Search for a **New Match** and receive a ticket ID",
-		Long:    `Search for a **New Match** and receive a ticket ID`,
+		Short:   "Search for a **New Quick Match** and receive a ticket ID",
+		Long:    `Search for a **New Quick Match** and receive a ticket ID`,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return createTicket(cmdBuilder, cmd, args, false)
 		},
